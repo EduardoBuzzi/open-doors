@@ -1,15 +1,25 @@
-//document.body.onload
+var url1;
+var url2;
 
+try{
+	const form = document.getElementById('conversion-form');
+	var url1 = atob(form.dataset.assetAction);
+  	var url2 = document.getElementsByName('redirect_to')[0].value;
+} catch(err){}
 
-var url = document.getElementsByName('redirect_to')[0].value;
-if(url != null){
-    adcElementoRD();
+if(url1) {
+	adicionarBotao(url1);
+} else if(url2) {
+	adicionarBotao(url2);
 }
 
-function adcElementoRD() {
+
+
+
+function adicionarBotao(urp) {
     var novoElemento = document.createElement("a");
     var btn = document.createTextNode("Ver página destino");
-    novoElemento.setAttribute("href", url);
+    novoElemento.setAttribute("href", urp);
     novoElemento.setAttribute("id", "rd-button-joq3m2m7")
     novoElemento.setAttribute("target", "_blank")  
     novoElemento.appendChild(btn);
@@ -37,4 +47,3 @@ function rdValidate() {
 	  window.alert('Depois que você clicar em OK, vou tirar a verificação do RD para você ;)')
     }
 }
-
