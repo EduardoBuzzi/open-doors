@@ -4,12 +4,12 @@ var url2;
 try{
 	const form = document.getElementById('conversion-form');
 	var url1 = atob(form.dataset.assetAction);
-  	var url2 = document.getElementsByName('redirect_to')[0].value;
+	var url2 = document.getElementsByName('redirect_to')[0].value;
 } catch(err){}
 
-if(url1) {
+if(url1 != null) {
 	adicionarBotao(url1);
-} else if(url2) {
+} else if(url2 != null) {
 	adicionarBotao(url2);
 }
 
